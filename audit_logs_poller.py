@@ -20,7 +20,7 @@ value_data_directory =  "./.valuedata/"
 root_title = "neurograph"
 
 # Set the name of the project or model
-project_name = "mymodel"
+project_name = "my_model"
 
 # Set the name of the image file
 image_file = f"./__graphout/{project_name}_scatter_plot_inverted.png"
