@@ -41,4 +41,6 @@ The plotter graphs are updated every 20 seconds by default.
 
 Happy training and analyzing with neurograph-framework! 📊🧠
 
+## More
+
 My other projects are at: [github.com/FlyingFathead/](https://github.com/FlyingFathead/)
