@@ -6,7 +6,7 @@
 
 ## Features
 
-- Creates scatter plots that display entropy loss over training iterations.
+- Creates a line out of average entropy losses along with scatter plots that display entropy loss over single training iterations. Useful for tracking per-iteration scatter during model training.
 - Annotations for minimum and maximum loss values as well as per-iteration scatter.
 - Indication of the latest iteration number and average loss value.
 - Overlay warnings in case of missing or outdated data.
