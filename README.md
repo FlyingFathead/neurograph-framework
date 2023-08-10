@@ -1,6 +1,6 @@
 # neurograph-framework
 
-![neurograph-framework](https://github.com/FlyingFathead/neurograph-framework/neurograph-framework.png)
+![neurograph-framework](neurograph-framework.png)
 
 **neurograph-framework** is a versatile tool designed to help you visualize entropy loss in TensorFlow-based neural network training. It generates insightful scatter plots with annotations to aid in understanding and analyzing your training progress.
 
