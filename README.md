@@ -11,7 +11,7 @@
 - Indication of the latest iteration number and average loss value.
 - Overlay warnings in case of missing or outdated data.
 - Customizable to suit various types of iteration data, suitable for all kinds of visualization purposes.
-- Intended to visualize entropy losses as effectively as possible (min/max lines, median, per-it. scatter etc).
+- Intended to visualize entropy losses as effectively as possible (min/max lines, median, per-iteration scatter etc).
 
 ## Usage
 
