@@ -19,7 +19,7 @@ import datetime
 import time
 
 # Set the name of the project or model
-project_name = "fenno"
+project_name = "my_project"
 
 # Set the name of the scatter plot image file
 scatterplot_imagefile = f"{project_name}_scatter_plot.png"
