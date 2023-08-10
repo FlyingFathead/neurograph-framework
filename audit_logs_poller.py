@@ -8,7 +8,6 @@ import time
 import shutil
 from PIL import Image, ImageTk
 import subprocess
-import re
 
 # Set the variables for the project
 log_directory = "./logs/"
