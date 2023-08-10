@@ -43,4 +43,6 @@ Happy training and analyzing with neurograph-framework! 📊🧠
 
 ## About
 
+A terminal-based version of the framework (i.e. for headless training setups): [neurograph](https://github.com/FlyingFathead/neurograph/)
+
 My other projects are at: [github.com/FlyingFathead/](https://github.com/FlyingFathead/)
