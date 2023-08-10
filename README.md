@@ -25,7 +25,7 @@ cd neurograph-framework/
 ```
 3. Install the PyPi requirements with `pip install -r requirements.txt`
 
-(these are):
+(or, make sure you have these installed):
 ```
 matplotlib>=3.5.1
 Pillow>=9.1.0
