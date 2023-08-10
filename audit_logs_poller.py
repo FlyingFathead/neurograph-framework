@@ -54,12 +54,12 @@ def get_setname(log_directory):
     print(f"[{now}] [INFO] The following set name was found: {setname}")
     raw_setname = setname
     
-    setti_type = "unknown"  # Set a default value for setti_type
+    dataset_type = "unknown"  # Set a default value for dataset_type
     if os.path.isdir(raw_setname):
-        setti_type = "dir"
+        dataset_type = "dir"
         setname = os.path.basename(os.path.normpath(raw_setname))
     elif os.path.isfile(raw_setname):
-        setti_type = "file"
+        dataset_type = "file"
         setname = os.path.basename(raw_setname).split(".")[0]
     if setname == "":
         print(f"[{now}] [WARN] {raw_setname} -- set name is empty!")
