@@ -1,13 +1,14 @@
 # neurograph-framework // audit_logs_poller
-# v0.378 // github.com/FlyingFathead
+# v0.378 // aug 10, 2023 // https://github.com/FlyingFathead
 
 import re
 import tkinter as tk
 import os
 import time
+import shutil
 from PIL import Image, ImageTk
 import subprocess
-import time
+import re
 
 # Set the variables for the project
 log_directory = "./logs/"
@@ -20,16 +21,24 @@ value_data_directory =  "./.valuedata/"
 root_title = "neurograph"
 
 # Set the name of the project or model
-project_name = "my_model"
+project_name = "mymodel"
 
 # Set the name of the image file
 image_file = f"./__graphout/{project_name}_scatter_plot_inverted.png"
 
-import os
-import re
-
 # timestamp
 now = time.strftime('%Y-%m-%d %H:%M:%S')  # Get the current time
+
+# Get the terminal width
+width = shutil.get_terminal_size().columns
+
+# Generate the dotted line
+dotted_line = '-' * width
+
+# startup
+print(dotted_line)
+print(f"[{now}] Neurograph poller started.")
+print(dotted_line)
 
 def get_setname(log_directory):
     latest = -float("inf")  # Initialize latest with the minimum possible float value
@@ -102,7 +111,7 @@ def refresh_image():
     image = Image.open(image_file)
 
     # Resize the image
-    image = image.resize((640, 480), Image.LANCZOS)
+    image = image.resize((640, 480), Image.Resampling.LANCZOS)
 
     # Convert the image to a PhotoImage object
     image = ImageTk.PhotoImage(image)
