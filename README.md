@@ -6,11 +6,12 @@
 
 ## Features
 
-- Create scatter plots that display entropy loss over training iterations.
-- Annotations for minimum and maximum loss values.
+- Creates scatter plots that display entropy loss over training iterations.
+- Annotations for minimum and maximum loss values as well as per-iteration scatter.
 - Indication of the latest iteration number and average loss value.
 - Overlay warnings in case of missing or outdated data.
-- Customizable to suit various types of iteration data.
+- Customizable to suit various types of iteration data, suitable for all kinds of visualization purposes.
+- Intended to visualize entropy losses as effectively as possible (min/max lines, median, per-it. scatter etc).
 
 ## Usage
 
