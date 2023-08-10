@@ -1,5 +1,5 @@
 # neurograph-framework // audit_subprocess
-# v0.378 // github.com/FlyingFathead
+# v0.378 // aug 10, 2023 // https://github.com/FlyingFathead
 
 # imports
 # image inverter
@@ -19,7 +19,7 @@ import datetime
 import time
 
 # Set the name of the project or model
-project_name = "my_model"
+project_name = "fenno"
 
 # Set the name of the scatter plot image file
 scatterplot_imagefile = f"{project_name}_scatter_plot.png"
