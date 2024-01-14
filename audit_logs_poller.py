@@ -1,5 +1,6 @@
 # neurograph-framework // audit_logs_poller
-# v0.378 // aug 10, 2023 // https://github.com/FlyingFathead
+# v0.379 // jan 14, 2024 // https://github.com/FlyingFathead
+# https://github.com/FlyingFathead/neurograph-framework/
 
 import re
 import tkinter as tk
@@ -40,14 +41,22 @@ print(f"[{now}] Neurograph poller started.")
 print(dotted_line)
 
 def get_setname(log_directory):
-    latest = -float("inf")  # Initialize latest with the minimum possible float value
+    latest = -float("inf")
+    latest_file = None
+
     for file in os.listdir(log_directory):
+        print(f"Found file: {file}")        
         file_path = os.path.join(log_directory, file)
         if file.startswith("gpt_train_") and os.path.getmtime(file_path) > latest:
             latest = os.path.getmtime(file_path)
             latest_file = file_path
+
+    if latest_file is None:
+        print(f"[{now}] No log files found in the directory.")
+        return None
+
     print(f"[{now}] Latest log file is: {latest_file}")
-    
+
     with open(latest_file, "r") as f:
         setname = next(line for line in f if line.startswith("::: Source dataset file name: "))
     setname = setname.replace("::: Source dataset file name: ", "")
@@ -91,16 +100,31 @@ def refresh_image():
     
     # Get the set name
     path = get_setname(log_directory)
+    if path is None:
+        print(f"[{now}] Error: No set name found.")
+        return
+
     components = path.split("/")
-    final_string = components[-2]
+
+    # Handling path based on its content
+    components = path.split("/")
+    if len(components) >= 2:
+        final_string = components[-2]
+    else:
+        # If there's only one component, it's just a filename
+        # So, we'll use the filename without extension
+        final_string = os.path.splitext(components[0])[0]
+
     print(f"[{now}] Set is: {final_string}")
     
     # switch to dir
     os.chdir(script_directory)
     
     # Run the other script    
+    print(f"[{now}] About to run audit_subprocess.py...")
     process = subprocess.Popen(["python3", "audit_subprocess.py", final_string])
-    process.wait()    
+    process.wait()
+    print(f"[{now}] Finished running audit_subprocess.py.")
 
     # A hack to bypass tkinter's image caching
     cache_buster = "?" + str(time.time())
